@@ -58,26 +58,14 @@
     <blockquote>WordPress Widget to display a Stack Overflow profile</blockquote>
     <a href="https://stackapps.com/questions/3492/wordpress-widget-to-display-a-stack-overflow-profile">way to stackflow</a>
     <pre>
-        <h3>All Post Meta</h3>
+        <?php query_posts('cat=-3'); ?>
 
-      
-
-  // Get all the data 
-  $getPostCustom = get_post_custom(); 
-
-    foreach($getPostCustom as $name=>$value) {
-
-        echo "<strong>" . $name . "</strong>"."  =>  ";
-
-        foreach ($value as $nameAr=>$valueAr) {
-                echo "<br />";
-                echo $nameAr."  =>  ";
-                echo var_dump($valueAr);
-        }
-
-        echo "<br /><br />";
-
-    }
+        <?php if (have_posts()) : ?>
+        <?php while (have_posts()) : the_post(); ?>
+          <h3></h3>	
+          <p><?php the_time('F jS, Y') ?></p>
+          <?php the_content(); ?>
+        <?php endwhile; ?>
 
     </pre>
 </html>
