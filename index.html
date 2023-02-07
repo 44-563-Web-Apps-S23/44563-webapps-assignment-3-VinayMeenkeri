@@ -53,4 +53,31 @@
         <td>15</td>
     </tr>
     </table>
+    <hr>
+    <h3>Word Press</h3>
+    <blockquote>WordPress Widget to display a Stack Overflow profile</blockquote>
+    <a href="https://stackapps.com/questions/3492/wordpress-widget-to-display-a-stack-overflow-profile">way to stackflow</a>
+    <pre>
+        <h3>All Post Meta</h3>
+
+      
+
+  // Get all the data 
+  $getPostCustom = get_post_custom(); 
+
+    foreach($getPostCustom as $name=>$value) {
+
+        echo "<strong>" . $name . "</strong>"."  =>  ";
+
+        foreach ($value as $nameAr=>$valueAr) {
+                echo "<br />";
+                echo $nameAr."  =>  ";
+                echo var_dump($valueAr);
+        }
+
+        echo "<br /><br />";
+
+    }
+
+    </pre>
 </html>
